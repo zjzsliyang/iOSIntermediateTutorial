@@ -1,5 +1,7 @@
 # iOS Intermediate Tutorial
 
+iOS University官方中级课程(中文)
+
 ![Swift](https://img.shields.io/badge/Swift-4-blue.svg) 
 
 ## Requirement
@@ -13,6 +15,14 @@
 - Chinese version
 - Have references reading
 - 5 + 1 class hours
+
+## Agenda
+
+|   Time    |    Milestone     |
+| :-------: | :--------------: |
+|  July 31  |  Demo Proposal   |
+| August 20 |  Demo Implement  |
+| August 31 | Slides Implement |
 
 ## Schema
 

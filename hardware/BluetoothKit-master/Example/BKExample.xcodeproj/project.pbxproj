@@ -19,6 +19,9 @@
 		9549B8321F43A9EA00D9B258 /* Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9549B8311F43A9EA00D9B258 /* Pin.swift */; };
 		95F1270D1F43A1BB00824917 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F1270B1F43A1BB00824917 /* MessageViewController.swift */; };
 		95F1270E1F43A1BB00824917 /* siriViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F1270C1F43A1BB00824917 /* siriViewController.swift */; };
+		95F9A2871F43BCC1008E39B0 /* healthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F9A2861F43BCC1008E39B0 /* healthViewController.swift */; };
+		95F9A28C1F43C034008E39B0 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F9A28B1F43C034008E39B0 /* HealthKit.framework */; };
+		95F9A28E1F43C2E5008E39B0 /* healthkitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F9A28D1F43C2E5008E39B0 /* healthkitViewController.swift */; };
 		C668889C1B970123003C8DBB /* NSData+NumberOfBytes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C668888D1B970123003C8DBB /* NSData+NumberOfBytes.swift */; };
 		C668889D1B970123003C8DBB /* UIImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = C668888E1B970123003C8DBB /* UIImage+Color.swift */; };
 		C668889E1B970123003C8DBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66888901B970123003C8DBB /* AppDelegate.swift */; };
@@ -164,6 +167,9 @@
 		9549B8311F43A9EA00D9B258 /* Pin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pin.swift; sourceTree = "<group>"; };
 		95F1270B1F43A1BB00824917 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		95F1270C1F43A1BB00824917 /* siriViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = siriViewController.swift; sourceTree = "<group>"; };
+		95F9A2861F43BCC1008E39B0 /* healthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = healthViewController.swift; sourceTree = "<group>"; };
+		95F9A28B1F43C034008E39B0 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		95F9A28D1F43C2E5008E39B0 /* healthkitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = healthkitViewController.swift; path = ../healthkitViewController.swift; sourceTree = "<group>"; };
 		C668888D1B970123003C8DBB /* NSData+NumberOfBytes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSData+NumberOfBytes.swift"; sourceTree = "<group>"; };
 		C668888E1B970123003C8DBB /* UIImage+Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Color.swift"; sourceTree = "<group>"; };
 		C66888901B970123003C8DBB /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -199,6 +205,7 @@
 				C67653F51B8E2D3C00D43F8E /* BluetoothKit.framework in Frameworks */,
 				952FA2521F43A8900045701E /* MapKit.framework in Frameworks */,
 				918E89671DBA036200174266 /* SnapKit.framework in Frameworks */,
+				95F9A28C1F43C034008E39B0 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,10 +273,12 @@
 		C66888951B970123003C8DBB /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				95F9A28D1F43C2E5008E39B0 /* healthkitViewController.swift */,
 				95F1270B1F43A1BB00824917 /* MessageViewController.swift */,
 				95F1270C1F43A1BB00824917 /* siriViewController.swift */,
 				9549B8311F43A9EA00D9B258 /* Pin.swift */,
 				9549B82C1F43A99800D9B258 /* mapViewController.swift */,
+				95F9A2861F43BCC1008E39B0 /* healthViewController.swift */,
 				C66888961B970123003C8DBB /* CentralViewController.swift */,
 				C66888971B970123003C8DBB /* PeripheralViewController.swift */,
 				C66888981B970123003C8DBB /* RemotePeripheralViewController.swift */,
@@ -329,6 +338,7 @@
 		C67A226F1B8C7DE300CB74CE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				95F9A28B1F43C034008E39B0 /* HealthKit.framework */,
 				952FA2511F43A8900045701E /* MapKit.framework */,
 				918E895E1DBA007300174266 /* SnapKit.xcodeproj */,
 				918E89551DBA006700174266 /* CryptoSwift.xcodeproj */,
@@ -403,7 +413,7 @@
 						LastSwiftMigration = 0800;
 						SystemCapabilities = {
 							com.apple.HealthKit = {
-								enabled = 0;
+								enabled = 1;
 							};
 							com.apple.Maps.iOS = {
 								enabled = 1;
@@ -580,6 +590,7 @@
 				C668889E1B970123003C8DBB /* AppDelegate.swift in Sources */,
 				9549B82D1F43A99800D9B258 /* mapViewController.swift in Sources */,
 				C66888A21B970123003C8DBB /* CentralViewController.swift in Sources */,
+				95F9A28E1F43C2E5008E39B0 /* healthkitViewController.swift in Sources */,
 				C66888A31B970123003C8DBB /* PeripheralViewController.swift in Sources */,
 				C668889F1B970123003C8DBB /* Colors.swift in Sources */,
 				C668889C1B970123003C8DBB /* NSData+NumberOfBytes.swift in Sources */,
@@ -587,6 +598,7 @@
 				C668889D1B970123003C8DBB /* UIImage+Color.swift in Sources */,
 				C66888A41B970123003C8DBB /* RemotePeripheralViewController.swift in Sources */,
 				95F1270D1F43A1BB00824917 /* MessageViewController.swift in Sources */,
+				95F9A2871F43BCC1008E39B0 /* healthViewController.swift in Sources */,
 				C66888A51B970123003C8DBB /* RoleSelectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

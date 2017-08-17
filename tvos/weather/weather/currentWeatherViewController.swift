@@ -22,6 +22,8 @@ import UIKit
                 return nil
             }
         }
+        
+        
     }
     @IBInspectable var borderWidth:CGFloat {
         set {
@@ -44,6 +46,7 @@ import UIKit
 
 class currentWeatherViewController: UIViewController {
     @IBOutlet weak var myview: UIView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

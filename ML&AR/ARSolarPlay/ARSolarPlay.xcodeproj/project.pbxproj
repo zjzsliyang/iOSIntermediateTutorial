@@ -9,21 +9,21 @@
 /* Begin PBXBuildFile section */
 		2F25BB0D1F43E9BC00215A4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F25BB0C1F43E9BC00215A4E /* AppDelegate.swift */; };
 		2F25BB0F1F43E9BC00215A4E /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F25BB0E1F43E9BC00215A4E /* art.scnassets */; };
-		2F25BB111F43E9BC00215A4E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F25BB101F43E9BC00215A4E /* ViewController.swift */; };
 		2F25BB141F43E9BC00215A4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F25BB121F43E9BC00215A4E /* Main.storyboard */; };
 		2F25BB161F43E9BC00215A4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F25BB151F43E9BC00215A4E /* Assets.xcassets */; };
 		2F25BB191F43E9BC00215A4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F25BB171F43E9BC00215A4E /* LaunchScreen.storyboard */; };
+		2F823C111F46CA98008CFF3C /* SCNViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F823C101F46CA98008CFF3C /* SCNViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2F25BB091F43E9BC00215A4E /* ARSolarPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARSolarPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F25BB0C1F43E9BC00215A4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F25BB0E1F43E9BC00215A4E /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
-		2F25BB101F43E9BC00215A4E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2F25BB131F43E9BC00215A4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2F25BB151F43E9BC00215A4E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F25BB181F43E9BC00215A4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2F25BB1A1F43E9BC00215A4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F823C101F46CA98008CFF3C /* SCNViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCNViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +58,7 @@
 			children = (
 				2F25BB0C1F43E9BC00215A4E /* AppDelegate.swift */,
 				2F25BB0E1F43E9BC00215A4E /* art.scnassets */,
-				2F25BB101F43E9BC00215A4E /* ViewController.swift */,
+				2F823C101F46CA98008CFF3C /* SCNViewController.swift */,
 				2F25BB121F43E9BC00215A4E /* Main.storyboard */,
 				2F25BB151F43E9BC00215A4E /* Assets.xcassets */,
 				2F25BB171F43E9BC00215A4E /* LaunchScreen.storyboard */,
@@ -139,7 +139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F25BB111F43E9BC00215A4E /* ViewController.swift in Sources */,
+				2F823C111F46CA98008CFF3C /* SCNViewController.swift in Sources */,
 				2F25BB0D1F43E9BC00215A4E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -316,6 +316,7 @@
 				2F25BB1F1F43E9BC00215A4E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

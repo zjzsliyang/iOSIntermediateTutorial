@@ -10,7 +10,7 @@ import UIKit
 import SwiftCharts
 
 
-class chartsViewController: UIViewController {
+class ChartsViewController: UIViewController {
     fileprivate var chart: Chart? 
     @IBOutlet weak var myview: UIView!
     override func viewDidLoad() {

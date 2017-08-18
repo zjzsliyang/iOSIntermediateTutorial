@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1E5260DD1F4336340089F4ED /* WeatherIcon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E5260DC1F4336340089F4ED /* WeatherIcon.xcassets */; };
-		1E53300C1F4484D3005AAE1F /* chartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E53300B1F4484D3005AAE1F /* chartsViewController.swift */; };
+		1E53300C1F4484D3005AAE1F /* ChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E53300B1F4484D3005AAE1F /* ChartsViewController.swift */; };
 		1E53300F1F44856F005AAE1F /* ExamplesDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E53300D1F44856F005AAE1F /* ExamplesDefaults.swift */; };
 		1E5330101F44856F005AAE1F /* Env.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E53300E1F44856F005AAE1F /* Env.swift */; };
 		1EFF9E061F41D78900F2DBE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFF9E051F41D78900F2DBE5 /* AppDelegate.swift */; };
@@ -18,7 +18,7 @@
 		1EFF9E0F1F41D78900F2DBE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EFF9E0E1F41D78900F2DBE5 /* Assets.xcassets */; };
 		1EFF9E1A1F41D78900F2DBE5 /* weatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFF9E191F41D78900F2DBE5 /* weatherTests.swift */; };
 		1EFF9E251F41D78900F2DBE5 /* weatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFF9E241F41D78900F2DBE5 /* weatherUITests.swift */; };
-		1EFF9E331F41E2D200F2DBE5 /* currentWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFF9E321F41E2D200F2DBE5 /* currentWeatherViewController.swift */; };
+		1EFF9E331F41E2D200F2DBE5 /* CurrentWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFF9E321F41E2D200F2DBE5 /* CurrentWeatherViewController.swift */; };
 		B3353A631C4CDAA2BEC8D46E /* Pods_weatherUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCCCA206601EE94DCD2CE92E /* Pods_weatherUITests.framework */; };
 		C024597561A17F622C20CA60 /* Pods_weather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4622D094FECC000BF3B362DC /* Pods_weather.framework */; };
 		D6507DF8E88C7661B041859E /* Pods_weatherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF4E6F360D0E536F7A759648 /* Pods_weatherTests.framework */; };
@@ -43,7 +43,7 @@
 
 /* Begin PBXFileReference section */
 		1E5260DC1F4336340089F4ED /* WeatherIcon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = WeatherIcon.xcassets; sourceTree = "<group>"; };
-		1E53300B1F4484D3005AAE1F /* chartsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chartsViewController.swift; sourceTree = "<group>"; };
+		1E53300B1F4484D3005AAE1F /* ChartsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsViewController.swift; sourceTree = "<group>"; };
 		1E53300D1F44856F005AAE1F /* ExamplesDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ExamplesDefaults.swift; path = "../../../../Downloads/SwiftCharts-master 2/Examples/Examples/ExamplesDefaults.swift"; sourceTree = "<group>"; };
 		1E53300E1F44856F005AAE1F /* Env.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Env.swift; path = "../../../../Downloads/SwiftCharts-master 2/Examples/Examples/Env.swift"; sourceTree = "<group>"; };
 		1EFF9E021F41D78900F2DBE5 /* weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,7 +59,7 @@
 		1EFF9E201F41D78900F2DBE5 /* weatherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = weatherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EFF9E241F41D78900F2DBE5 /* weatherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weatherUITests.swift; sourceTree = "<group>"; };
 		1EFF9E261F41D78900F2DBE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1EFF9E321F41E2D200F2DBE5 /* currentWeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = currentWeatherViewController.swift; sourceTree = "<group>"; };
+		1EFF9E321F41E2D200F2DBE5 /* CurrentWeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherViewController.swift; sourceTree = "<group>"; };
 		3DC9F27F954980EDEB64D74E /* Pods-weatherUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weatherUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-weatherUITests/Pods-weatherUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4622D094FECC000BF3B362DC /* Pods_weather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_weather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ED68301CBD48B9EFE967ED0 /* Pods-weather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weather.release.xcconfig"; path = "Pods/Target Support Files/Pods-weather/Pods-weather.release.xcconfig"; sourceTree = "<group>"; };
@@ -133,8 +133,8 @@
 				1E5260DC1F4336340089F4ED /* WeatherIcon.xcassets */,
 				1EFF9E0E1F41D78900F2DBE5 /* Assets.xcassets */,
 				1EFF9E101F41D78900F2DBE5 /* Info.plist */,
-				1EFF9E321F41E2D200F2DBE5 /* currentWeatherViewController.swift */,
-				1E53300B1F4484D3005AAE1F /* chartsViewController.swift */,
+				1EFF9E321F41E2D200F2DBE5 /* CurrentWeatherViewController.swift */,
+				1E53300B1F4484D3005AAE1F /* ChartsViewController.swift */,
 			);
 			path = weather;
 			sourceTree = "<group>";
@@ -473,9 +473,9 @@
 				1E53300F1F44856F005AAE1F /* ExamplesDefaults.swift in Sources */,
 				1EFF9E0A1F41D78900F2DBE5 /* SecondViewController.swift in Sources */,
 				1EFF9E061F41D78900F2DBE5 /* AppDelegate.swift in Sources */,
-				1E53300C1F4484D3005AAE1F /* chartsViewController.swift in Sources */,
+				1E53300C1F4484D3005AAE1F /* ChartsViewController.swift in Sources */,
 				1EFF9E081F41D78900F2DBE5 /* firstViewController.swift in Sources */,
-				1EFF9E331F41E2D200F2DBE5 /* currentWeatherViewController.swift in Sources */,
+				1EFF9E331F41E2D200F2DBE5 /* CurrentWeatherViewController.swift in Sources */,
 				1E5330101F44856F005AAE1F /* Env.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -44,13 +44,15 @@ import UIKit
     }
 }
 
-class currentWeatherViewController: UIViewController {
+class CurrentWeatherViewController: UIViewController {
     @IBOutlet weak var myview: UIView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+       
         // Do any additional setup after loading the view.
     }
 
@@ -59,7 +61,10 @@ class currentWeatherViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func searchButtonPress(_ sender: Any) {
+         //WeatherManagerment.test()
+    }
+    
     /*
     // MARK: - Navigation
 

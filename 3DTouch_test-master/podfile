@@ -1,0 +1,5 @@
+platform :ios, ’10.3’
+use_frameworks!
+target '3DTouch' do
+pod ‘SwiftyStoreKit’
+end

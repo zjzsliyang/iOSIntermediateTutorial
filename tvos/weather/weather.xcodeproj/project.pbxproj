@@ -11,6 +11,8 @@
 		1E53300C1F4484D3005AAE1F /* ChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E53300B1F4484D3005AAE1F /* ChartsViewController.swift */; };
 		1E53300F1F44856F005AAE1F /* ExamplesDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E53300D1F44856F005AAE1F /* ExamplesDefaults.swift */; };
 		1E5330101F44856F005AAE1F /* Env.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E53300E1F44856F005AAE1F /* Env.swift */; };
+		1E965C361F46FA850078CED1 /* MyLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E965C351F46FA850078CED1 /* MyLocationManager.swift */; };
+		1E965C381F46FCA40078CED1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E965C371F46FCA40078CED1 /* CoreLocation.framework */; };
 		1EFF9E061F41D78900F2DBE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFF9E051F41D78900F2DBE5 /* AppDelegate.swift */; };
 		1EFF9E081F41D78900F2DBE5 /* firstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFF9E071F41D78900F2DBE5 /* firstViewController.swift */; };
 		1EFF9E0A1F41D78900F2DBE5 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFF9E091F41D78900F2DBE5 /* SecondViewController.swift */; };
@@ -46,6 +48,8 @@
 		1E53300B1F4484D3005AAE1F /* ChartsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsViewController.swift; sourceTree = "<group>"; };
 		1E53300D1F44856F005AAE1F /* ExamplesDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ExamplesDefaults.swift; path = "../../../../Downloads/SwiftCharts-master 2/Examples/Examples/ExamplesDefaults.swift"; sourceTree = "<group>"; };
 		1E53300E1F44856F005AAE1F /* Env.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Env.swift; path = "../../../../Downloads/SwiftCharts-master 2/Examples/Examples/Env.swift"; sourceTree = "<group>"; };
+		1E965C351F46FA850078CED1 /* MyLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLocationManager.swift; sourceTree = "<group>"; };
+		1E965C371F46FCA40078CED1 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		1EFF9E021F41D78900F2DBE5 /* weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EFF9E051F41D78900F2DBE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1EFF9E071F41D78900F2DBE5 /* firstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firstViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E965C381F46FCA40078CED1 /* CoreLocation.framework in Frameworks */,
 				C024597561A17F622C20CA60 /* Pods_weather.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -135,6 +140,7 @@
 				1EFF9E101F41D78900F2DBE5 /* Info.plist */,
 				1EFF9E321F41E2D200F2DBE5 /* CurrentWeatherViewController.swift */,
 				1E53300B1F4484D3005AAE1F /* ChartsViewController.swift */,
+				1E965C351F46FA850078CED1 /* MyLocationManager.swift */,
 			);
 			path = weather;
 			sourceTree = "<group>";
@@ -160,6 +166,7 @@
 		57405B075671D55FFFFADE4F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1E965C371F46FCA40078CED1 /* CoreLocation.framework */,
 				4622D094FECC000BF3B362DC /* Pods_weather.framework */,
 				CF4E6F360D0E536F7A759648 /* Pods_weatherTests.framework */,
 				FCCCA206601EE94DCD2CE92E /* Pods_weatherUITests.framework */,
@@ -474,6 +481,7 @@
 				1EFF9E0A1F41D78900F2DBE5 /* SecondViewController.swift in Sources */,
 				1EFF9E061F41D78900F2DBE5 /* AppDelegate.swift in Sources */,
 				1E53300C1F4484D3005AAE1F /* ChartsViewController.swift in Sources */,
+				1E965C361F46FA850078CED1 /* MyLocationManager.swift in Sources */,
 				1EFF9E081F41D78900F2DBE5 /* firstViewController.swift in Sources */,
 				1EFF9E331F41E2D200F2DBE5 /* CurrentWeatherViewController.swift in Sources */,
 				1E5330101F44856F005AAE1F /* Env.swift in Sources */,

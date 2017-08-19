@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import CoreLocation
 //添加属性到属性检查器
 @IBDesignable extension UIView {
     @IBInspectable var borderColor:UIColor? {
@@ -48,13 +48,27 @@ class CurrentWeatherViewController: UIViewController {
     @IBOutlet weak var myview: UIView!
     
     
+    @IBOutlet weak var mylabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-       
-        // Do any additional setup after loading the view.
+        MyLocationManager.myTest()
+    
+        let coordinateNotification = Notification.Name.init(rawValue: "Get Coordinate")
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(CurrentWeatherViewController.sup),
+                                               name: coordinateNotification,
+                                               object: nil)
+//        NotificationCenter.default.addObserver(self,
+//                                               selector: #selector(CurrentWeatherViewController.sup),
+//                                               name: notif,
+//                                               object: nil)
     }
+    
+    @objc func sup(notification: Notification) {
+        print("Get Coordinate")
+    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -62,7 +76,10 @@ class CurrentWeatherViewController: UIViewController {
     }
     
     @IBAction func searchButtonPress(_ sender: Any) {
-         //WeatherManagerment.test()
+        //print(MyLocationManager.locationShared.myCoordinate.latitude)
+        //print(MyLocationManager.locationShared.myCoordinate.longitude)
+        let changeCity = Notification.Name.init(rawValue: "Change City")
+        NotificationCenter.default.post(name: changeCity, object: nil)
     }
     
     /*

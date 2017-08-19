@@ -13,6 +13,24 @@ class SecondViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+//        print(MyLocationManager.locationShared.myCoordinate.latitude)
+//        print(MyLocationManager.locationShared.myCoordinate.longitude)
+//        print(MyLocationManager.locationShared.myCoordinate.latitude)
+//        print(MyLocationManager.locationShared.myCoordinate.longitude)
+        let changeCity = Notification.Name.init(rawValue: "Change City")
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(CurrentWeatherViewController.sup),
+                                               name: changeCity,
+                                               object: nil)
+        
+    }
+    
+    @objc func sup(notification: Notification) {
+        print("Change City")
+//        print(MyLocationManager.locationShared.myCoordinate.latitude)
+//        print(MyLocationManager.locationShared.myCoordinate.longitude)
+//        print("gaigaigai")
+        //mylabel.text = "\(MyLocationManager.locationShared.myCoordinate.latitude)"
     }
 
     override func didReceiveMemoryWarning() {

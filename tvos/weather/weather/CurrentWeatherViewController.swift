@@ -45,28 +45,65 @@ import CoreLocation
 }
 
 class CurrentWeatherViewController: UIViewController {
+    
+    @IBOutlet weak var ui_textField: UITextField!
     @IBOutlet weak var myview: UIView!
+    
+    @IBOutlet weak var ui_temperature: UILabel!
+    @IBOutlet weak var ui_code: UIImageView!
+    @IBOutlet weak var ui_text: UILabel!
+    @IBOutlet weak var ui_sunrise: UILabel!
+    @IBOutlet weak var ui_sunset: UILabel!
+    @IBOutlet weak var ui_moonrise: UILabel!
+    @IBOutlet weak var ui_moonset: UILabel!
+    @IBOutlet weak var ui_quality: UILabel!
+    @IBOutlet weak var ui_pm25: UILabel!
+    @IBOutlet weak var ui_suggestion: UITextView!
     
     
     @IBOutlet weak var mylabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        MyLocationManager.myTest()
-    
-        let coordinateNotification = Notification.Name.init(rawValue: "Get Coordinate")
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(CurrentWeatherViewController.sup),
-                                               name: coordinateNotification,
-                                               object: nil)
-//        NotificationCenter.default.addObserver(self,
-//                                               selector: #selector(CurrentWeatherViewController.sup),
-//                                               name: notif,
-//                                               object: nil)
+        MyWeatherManager.initWeatherBasicInfo(updateUI: { (finalData) in
+            self.updateUI(finalData: finalData)
+        })
+        
+        let currentNotification = Notification.Name.init(rawValue: "Current View Update")
+        NotificationCenter.default.addObserver(forName: currentNotification, object: nil, queue: nil){(notification) in
+            MyWeatherManager.setWeatherBasicInfo(updateUI: {(finalData) in
+                self.updateUI(finalData: finalData)
+            })
+        }
     }
     
-    @objc func sup(notification: Notification) {
-        print("Get Coordinate")
+    func updateUI(finalData:[String:String]) -> Void {
+        let temperature = finalData["temperature"]
+        let code = finalData["code"]
+        let text = finalData["text"]
+        
+        let sunrise = finalData["sunrise"]
+        let sunset = finalData["sunset"]
+        let moonrise = finalData["moonrise"]
+        let moonset = finalData["moonset"]
+        
+        let quality = finalData["quality"]
+        let pm25 = finalData["pm25"]
+        let suggestion = finalData["details"]
+        
+        
+        DispatchQueue.main.async() {
+            self.ui_temperature.text = temperature! + "℃"
+            self.ui_code.image = UIImage(named: code!)
+            self.ui_text.text = text
+            self.ui_sunrise.text = sunrise
+            self.ui_sunset.text = sunset
+            self.ui_moonrise.text = moonrise
+            self.ui_moonset.text = moonset
+            self.ui_quality.text = quality
+            self.ui_pm25.text = pm25
+            self.ui_suggestion.text = suggestion
+        }
     }
 
 
@@ -76,10 +113,22 @@ class CurrentWeatherViewController: UIViewController {
     }
     
     @IBAction func searchButtonPress(_ sender: Any) {
-        //print(MyLocationManager.locationShared.myCoordinate.latitude)
-        //print(MyLocationManager.locationShared.myCoordinate.longitude)
-        let changeCity = Notification.Name.init(rawValue: "Change City")
-        NotificationCenter.default.post(name: changeCity, object: nil)
+        
+        
+        let searchText = ui_textField.text as! String
+        if (searchText != ""&&searchText != MyLocationManager.currentLocation){
+            
+            MyLocationManager.setCurrentLocation(current: searchText)
+            let currentNotification = Notification.Name.init(rawValue: "Current View Update")
+            NotificationCenter.default.post(name: currentNotification, object: nil)
+            
+            let forecastNotification = Notification.Name.init(rawValue: "ForeCast View Update")
+            NotificationCenter.default.post(name: forecastNotification, object: nil)
+            
+            let chartNotification = Notification.Name.init(rawValue: "Chart View Update")
+            NotificationCenter.default.post(name: chartNotification, object: nil)
+            
+        }
     }
     
     /*

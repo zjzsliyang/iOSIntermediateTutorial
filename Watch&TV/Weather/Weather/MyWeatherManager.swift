@@ -10,7 +10,9 @@ import Foundation
 
 class MyWeatherManager {
   
-  //    static let basicInfoUrl = "https://api.seniverse.com/v3/weather/now.json?key=qxlcxsjzcitnsr8q&location=beijing&language=zh-Hans&unit=c"
+//      static let basicInfoUrl = "https://api.seniverse.com/v3/weather/now.json?key=qxlcxsjzcitnsr8q&location=beijing&language=zh-Hans&unit=c"
+    
+    static let myKey = "kv3qdlu4ku268ypr"
   
   
   static func setWeatherTemperatureChart(updateUI: @escaping (_ finalData: [[String: String]]) -> Void) -> Void {
@@ -36,8 +38,8 @@ class MyWeatherManager {
   
   
   static func setWeatherForecastInfo(updateUI: @escaping (_ finalData: [[String: String]]) -> Void) {
-    let forecastBasicInfoUrl = "https://api.seniverse.com/v3/weather/daily.json?key=qxlcxsjzcitnsr8q&location=\(MyLocationManager.currentLocation)&language=zh-Hans&unit=c&start=1&days=7"
-    let forcastSunInfo = "https://api.seniverse.com/v3/geo/sun.json?key=qxlcxsjzcitnsr8q&location=\(MyLocationManager.currentLocation)&language=zh-Hans&start=1&days=7"
+    let forecastBasicInfoUrl = "https://api.seniverse.com/v3/weather/daily.json?key=\(myKey)&location=\(MyLocationManager.currentLocation)&language=zh-Hans&unit=c&start=1&days=7"
+    let forcastSunInfo = "https://api.seniverse.com/v3/geo/sun.json?key=\(myKey)&location=\(MyLocationManager.currentLocation)&language=zh-Hans&start=1&days=7"
     var finalData = [Dictionary<String, String>]()
     MyHttpManager.getJsonData(url: forecastBasicInfoUrl) { (forecastBasicResult) in
       //print(forecastBasicResult)
@@ -60,7 +62,7 @@ class MyWeatherManager {
   }
   
   static func setWeatherQualiyRankingInfo(updateUI: @escaping (_ finalData: [[String: String]]) -> Void) {
-    let qualiyRankingInfoUrl = "https://api.seniverse.com/v3/air/ranking.json?key=qxlcxsjzcitnsr8q&language=zh-Hans"
+    let qualiyRankingInfoUrl = "https://api.seniverse.com/v3/air/ranking.json?key=\(myKey)&language=zh-Hans"
     var finalData = [Dictionary<String, String>]()
     MyHttpManager.getJsonData(url: qualiyRankingInfoUrl) { (qualiyRankingResult) in
       
@@ -83,7 +85,7 @@ class MyWeatherManager {
   }
   
   static func setWeatherForecastQualityInfo(updateUI: @escaping (_ finalData: [[String: String]]) -> Void) {
-    let forecastQualtiyInfoUrl = "https://api.seniverse.com/v3/air/daily.json?key=qxlcxsjzcitnsr8q&language=zh-Hans&days=5&location=\(MyLocationManager.currentLocation)"
+    let forecastQualtiyInfoUrl = "https://api.seniverse.com/v3/air/daily.json?key=\(myKey)&language=zh-Hans&days=5&location=\(MyLocationManager.currentLocation)"
     var finalData = [Dictionary<String, String>]()
     MyHttpManager.getJsonData(url: forecastQualtiyInfoUrl) { (forecastQualityResult) in
       //print(forecastBasicResult)
@@ -123,11 +125,11 @@ class MyWeatherManager {
   
   
   static func setWeatherBasicInfo(updateUI: @escaping (_ finalData: [String: String]) -> Void) -> Void {
-    let basicInfoUrl = "https://api.seniverse.com/v3/weather/now.json?key=qxlcxsjzcitnsr8q&location=\(MyLocationManager.currentLocation)&language=zh-Hans&unit=c"
-    let sunInfoUrl = "https://api.seniverse.com/v3/geo/sun.json?key=qxlcxsjzcitnsr8q&location=\(MyLocationManager.currentLocation)&language=zh-Hans&start=0&days=1"
-    let moonInfoUrl = "https://api.seniverse.com/v3/geo/moon.json?key=qxlcxsjzcitnsr8q&location=\(MyLocationManager.currentLocation)&language=zh-Hans&start=0&days=1"
-    let airInfoUrl = "https://api.seniverse.com/v3/air/now.json?key=qxlcxsjzcitnsr8q&location=\(MyLocationManager.currentLocation)&language=zh-Hans&scope=city"
-    let lifeInfoUrl = "https://api.seniverse.com/v3/life/suggestion.json?key=qxlcxsjzcitnsr8q&location=\(MyLocationManager.currentLocation)&language=zh-Hans"
+    let basicInfoUrl = "https://api.seniverse.com/v3/weather/now.json?key=\(myKey)&location=\(MyLocationManager.currentLocation)&language=zh-Hans&unit=c"
+    let sunInfoUrl = "https://api.seniverse.com/v3/geo/sun.json?key=\(myKey)&location=\(MyLocationManager.currentLocation)&language=zh-Hans&start=0&days=1"
+    let moonInfoUrl = "https://api.seniverse.com/v3/geo/moon.json?key=\(myKey)&location=\(MyLocationManager.currentLocation)&language=zh-Hans&start=0&days=1"
+    let airInfoUrl = "https://api.seniverse.com/v3/air/now.json?key=\(myKey)&location=\(MyLocationManager.currentLocation)&language=zh-Hans&scope=city"
+    let lifeInfoUrl = "https://api.seniverse.com/v3/life/suggestion.json?key=\(myKey)&location=\(MyLocationManager.currentLocation)&language=zh-Hans"
     
     var finalData = Dictionary<String, String>()
     

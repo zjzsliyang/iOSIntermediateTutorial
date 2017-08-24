@@ -30,11 +30,11 @@ iOS University官方中级课程(中文)
   - 3D Touch, Notifications, In-App Purchases, Third-Party Lib, Simplest Server Side
 - Handware
   - Bluetooth, Location, HealthKit, SiriKit
-- Video/Audio
+- Video&Audio
   - Metal, Core Audio, Open GL
 - Game
   - GameCenter, SceneKit, SpriteKit
-- ML/AR
+- ML&AR
   - Core ML, ARKit
-- Watch/TV
+- Watch&TV
 

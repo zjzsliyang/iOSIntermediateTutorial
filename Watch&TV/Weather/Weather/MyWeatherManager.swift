@@ -16,7 +16,7 @@ class MyWeatherManager {
   
   
   static func setWeatherTemperatureChart(updateUI: @escaping (_ finalData: [[String: String]]) -> Void) -> Void {
-    var finalData = [Dictionary<String, String>]()
+    let finalData = [Dictionary<String, String>]()
     updateUI(finalData)
   }
   
@@ -73,7 +73,7 @@ class MyWeatherManager {
         for i in 0...9 {
           print(qualiyRankingDataArray[i])
           var temp = Dictionary<String, String>()
-          temp["name"] = ((qualiyRankingDataArray[i]["location"] as! [String: String])["name"] as! String)
+          temp["name"] = ((qualiyRankingDataArray[i]["location"] as! [String: String])["name"]!)
           temp["aqi"] = (qualiyRankingDataArray[i]["aqi"] as! String)
           finalData.append(temp)
         }
@@ -94,8 +94,8 @@ class MyWeatherManager {
         //print(forecastQualityDataArray)
         for i in 0...4 {
           var temp = Dictionary<String, String>()
-          temp["date"] = (forecastQualityDataArray[i]["date"] as! String)
-          temp["aqi"] = (forecastQualityDataArray[i]["aqi"] as! String)
+          temp["date"] = (forecastQualityDataArray[i]["date"]!)
+          temp["aqi"] = (forecastQualityDataArray[i]["aqi"]!)
           finalData.append(temp)
         }
         updateUI(finalData)

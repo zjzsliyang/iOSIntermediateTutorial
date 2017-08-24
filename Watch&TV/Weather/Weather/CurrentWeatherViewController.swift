@@ -115,7 +115,7 @@ class CurrentWeatherViewController: UIViewController {
   @IBAction func searchButtonPress(_ sender: Any) {
     
     
-    let searchText = ui_textField.text as! String
+    let searchText = ui_textField.text!
     if (searchText != "" && searchText != MyLocationManager.currentLocation) {
       
       MyLocationManager.setCurrentLocation(current: searchText)

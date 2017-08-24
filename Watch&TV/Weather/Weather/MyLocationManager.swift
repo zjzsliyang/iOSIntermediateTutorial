@@ -61,7 +61,7 @@ class MyLocationManager: CLLocationManager, CLLocationManagerDelegate {
       addressDict.forEach { print($0) }
 
       // Print fully formatted address
-      if let formattedAddress = addressDict["FormattedAddressLines"] as? [String] {
+      if (addressDict["FormattedAddressLines"] as? [String]) != nil {
         //print(formattedAddress.joined(separator: ", "))
       }
 

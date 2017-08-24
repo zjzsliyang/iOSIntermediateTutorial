@@ -21,7 +21,7 @@ class MyHttpManager {
           //print(NSString(data: data!, encoding: String.Encoding.utf8.rawValue))
           jsonResult = try JSONSerialization.jsonObject(with: data!) as! [String: Any]
           dealWithJson(jsonResult)
-        } catch let error as NSError {
+        } catch _ as NSError {
           print("error1")
         }
       }

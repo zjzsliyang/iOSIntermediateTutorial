@@ -65,14 +65,14 @@ class ChartsViewController: UIViewController {
       DispatchQueue.main.async() {
         let chartConfig = BarsChartConfig(
           chartSettings: ExamplesDefaults.chartSettingsWithPanZoom,
-          valsAxisConfig: ChartAxisConfig(from: 0, to: Double(finalDataArray[9]["aqi"] as! String)!, by: 2),
+          valsAxisConfig: ChartAxisConfig(from: 0, to: Double(finalDataArray[9]["aqi"]!)!, by: 2),
           xAxisLabelSettings: ExamplesDefaults.labelSettings,
           yAxisLabelSettings: ExamplesDefaults.labelSettings.defaultVertical()
         )
         
         var cityBars = [(String, Double)]()
         for i in 0...9 {
-          var temp = (finalDataArray[i]["name"], Double(finalDataArray[i]["aqi"] as! String)!)
+          let temp = (finalDataArray[i]["name"], Double(finalDataArray[i]["aqi"]!)!)
           cityBars.append(temp as! (String, Double))
         }
         
@@ -106,11 +106,9 @@ class ChartsViewController: UIViewController {
         var chartPoints = [ChartPoint]()
         
         for i in 0...4 {
-          let date = (finalDataArray[i]["date"] as! String)
+          let date = (finalDataArray[i]["date"]!)
           let index = date.index(date.startIndex, offsetBy: 5)
-          
-          let tempChartPoint = ChartPoint(x: ChartAxisValueString(date.substring(from: index
-          ), order: i, labelSettings: labelSettings), y: ChartAxisValueDouble(Double(finalDataArray[i]["aqi"]!)!))
+          let tempChartPoint = ChartPoint(x: ChartAxisValueString(String(describing: date[index...]), order: i, labelSettings: labelSettings), y: ChartAxisValueDouble(Double(finalDataArray[i]["aqi"]!)!))
           chartPoints.append(tempChartPoint)
         }
         
@@ -126,7 +124,7 @@ class ChartsViewController: UIViewController {
         var chartSettings = ExamplesDefaults.chartSettingsWithPanZoom
         chartSettings.trailing = 20
         let coordsSpace = ChartCoordsSpaceLeftBottomSingleAxis(chartSettings: chartSettings, chartFrame: chartFrame, xModel: xModel, yModel: yModel)
-        let (xAxisLayer, yAxisLayer, innerFrame) = (coordsSpace.xAxisLayer, coordsSpace.yAxisLayer, coordsSpace.chartInnerFrame)
+        let (xAxisLayer, yAxisLayer, _) = (coordsSpace.xAxisLayer, coordsSpace.yAxisLayer, coordsSpace.chartInnerFrame)
         
         let lineModel = ChartLineModel(chartPoints: chartPoints, lineColor: UIColor.red, lineWidth: 1, animDuration: 1, animDelay: 0)
         let chartPointsLineLayer = ChartPointsLineLayer(xAxis: xAxisLayer.axis, yAxis: yAxisLayer.axis, lineModels: [lineModel])
@@ -158,7 +156,7 @@ class ChartsViewController: UIViewController {
           (self.temperatureChart?.view)!.removeFromSuperview()
         }
         
-        print(Double(finalDataArray[0]["high"]!))
+        print(Double(finalDataArray[0]["high"]!)!)
         
         let labelSettings = ChartLabelSettings(font: ExamplesDefaults.labelFont)
         
@@ -173,9 +171,9 @@ class ChartsViewController: UIViewController {
         var chartPoints = [ChartPoint]()
         
         for i in 0...6 {
-          let date = (finalDataArray[i]["date"] as! String)
+          let date = (finalDataArray[i]["date"]!)
           let index = date.index(date.startIndex, offsetBy: 5)
-          let tempChartPoint = ChartPoint(x: ChartAxisValueString(date.substring(from: index), order: i, labelSettings: labelSettings), y: ChartAxisValueDouble(Double(finalDataArray[i]["high"]!)!))
+          let tempChartPoint = ChartPoint(x: ChartAxisValueString(String(describing: date[index...]), order: i, labelSettings: labelSettings), y: ChartAxisValueDouble(Double(finalDataArray[i]["high"]!)!))
           chartPoints.append(tempChartPoint)
         }
         
@@ -192,7 +190,7 @@ class ChartsViewController: UIViewController {
         var chartSettings = ExamplesDefaults.chartSettingsWithPanZoom
         chartSettings.trailing = 20
         let coordsSpace = ChartCoordsSpaceLeftBottomSingleAxis(chartSettings: chartSettings, chartFrame: chartFrame, xModel: xModel, yModel: yModel)
-        let (xAxisLayer, yAxisLayer, innerFrame) = (coordsSpace.xAxisLayer, coordsSpace.yAxisLayer, coordsSpace.chartInnerFrame)
+        let (xAxisLayer, yAxisLayer, _) = (coordsSpace.xAxisLayer, coordsSpace.yAxisLayer, coordsSpace.chartInnerFrame)
         
         let lineModel = ChartLineModel(chartPoints: chartPoints, lineColor: UIColor.red, lineWidth: 1, animDuration: 1, animDelay: 0)
         let chartPointsLineLayer = ChartPointsLineLayer(xAxis: xAxisLayer.axis, yAxis: yAxisLayer.axis, lineModels: [lineModel])

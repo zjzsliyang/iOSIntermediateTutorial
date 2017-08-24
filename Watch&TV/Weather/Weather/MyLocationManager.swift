@@ -15,7 +15,7 @@ class MyLocationManager: CLLocationManager, CLLocationManagerDelegate {
   static let locationShared = MyLocationManager()
   //static var currentProvince = "上海"
   //static var currentCity = "嘉定"
-  static var currentLocation = "上海嘉定"
+  static var currentLocation = "shanghaijiading"
   var flag: Bool = false
 
   var myCoordinate = CLLocationCoordinate2D()

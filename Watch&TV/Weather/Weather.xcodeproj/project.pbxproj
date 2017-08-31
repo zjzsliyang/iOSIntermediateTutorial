@@ -7,11 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1E39B38D1F4C81B600CFC5C8 /* Env.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E39B38B1F4C81B600CFC5C8 /* Env.swift */; };
-		1E39B38E1F4C81B600CFC5C8 /* ExamplesDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E39B38C1F4C81B600CFC5C8 /* ExamplesDefaults.swift */; };
 		1E5260DD1F4336340089F4ED /* WeatherIcon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E5260DC1F4336340089F4ED /* WeatherIcon.xcassets */; };
 		1E6364BA1F49E43200E087E7 /* ChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E53300B1F4484D3005AAE1F /* ChartsViewController.swift */; };
 		1E965C381F46FCA40078CED1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E965C371F46FCA40078CED1 /* CoreLocation.framework */; };
+		1EB622731F5680A700AE9A68 /* MyUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB622721F5680A700AE9A68 /* MyUIView.swift */; };
 		1EEC20161F48A36F006D98A0 /* MyWeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEC20151F48A36F006D98A0 /* MyWeatherManager.swift */; };
 		1EEC20181F48A3D3006D98A0 /* MyHttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEC20171F48A3D3006D98A0 /* MyHttpManager.swift */; };
 		1EEC201A1F494984006D98A0 /* MyLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEC20191F494984006D98A0 /* MyLocationManager.swift */; };
@@ -26,11 +25,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1E39B38B1F4C81B600CFC5C8 /* Env.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Env.swift; sourceTree = "<group>"; };
-		1E39B38C1F4C81B600CFC5C8 /* ExamplesDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamplesDefaults.swift; sourceTree = "<group>"; };
 		1E5260DC1F4336340089F4ED /* WeatherIcon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = WeatherIcon.xcassets; sourceTree = "<group>"; };
 		1E53300B1F4484D3005AAE1F /* ChartsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsViewController.swift; sourceTree = "<group>"; };
 		1E965C371F46FCA40078CED1 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		1EB622721F5680A700AE9A68 /* MyUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUIView.swift; sourceTree = "<group>"; };
 		1EEC20151F48A36F006D98A0 /* MyWeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWeatherManager.swift; sourceTree = "<group>"; };
 		1EEC20171F48A3D3006D98A0 /* MyHttpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHttpManager.swift; sourceTree = "<group>"; };
 		1EEC20191F494984006D98A0 /* MyLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLocationManager.swift; sourceTree = "<group>"; };
@@ -91,8 +89,6 @@
 		1EFF9E041F41D78900F2DBE5 /* Weather */ = {
 			isa = PBXGroup;
 			children = (
-				1E39B38B1F4C81B600CFC5C8 /* Env.swift */,
-				1E39B38C1F4C81B600CFC5C8 /* ExamplesDefaults.swift */,
 				1EFF9E051F41D78900F2DBE5 /* AppDelegate.swift */,
 				1EFF9E071F41D78900F2DBE5 /* FirstViewController.swift */,
 				1EFF9E0B1F41D78900F2DBE5 /* Main.storyboard */,
@@ -105,6 +101,7 @@
 				1EFF9E321F41E2D200F2DBE5 /* CurrentWeatherViewController.swift */,
 				1EEC20191F494984006D98A0 /* MyLocationManager.swift */,
 				1EEC20171F48A3D3006D98A0 /* MyHttpManager.swift */,
+				1EB622721F5680A700AE9A68 /* MyUIView.swift */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -266,11 +263,10 @@
 			files = (
 				1E6364BA1F49E43200E087E7 /* ChartsViewController.swift in Sources */,
 				1EFF9E0A1F41D78900F2DBE5 /* ForecastViewController.swift in Sources */,
-				1E39B38E1F4C81B600CFC5C8 /* ExamplesDefaults.swift in Sources */,
 				1EFF9E061F41D78900F2DBE5 /* AppDelegate.swift in Sources */,
-				1E39B38D1F4C81B600CFC5C8 /* Env.swift in Sources */,
 				1EFF9E081F41D78900F2DBE5 /* FirstViewController.swift in Sources */,
 				1EEC20161F48A36F006D98A0 /* MyWeatherManager.swift in Sources */,
+				1EB622731F5680A700AE9A68 /* MyUIView.swift in Sources */,
 				1EEC201A1F494984006D98A0 /* MyLocationManager.swift in Sources */,
 				1EFF9E331F41E2D200F2DBE5 /* CurrentWeatherViewController.swift in Sources */,
 				1EEC20181F48A3D3006D98A0 /* MyHttpManager.swift in Sources */,
@@ -403,10 +399,9 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = G4WT85FFHH;
 				INFOPLIST_FILE = Weather/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.edu.tongji.Weather;
+				PRODUCT_BUNDLE_IDENTIFIER = com.apple.Weather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -420,10 +415,9 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = G4WT85FFHH;
 				INFOPLIST_FILE = Weather/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.edu.tongji.Weather;
+				PRODUCT_BUNDLE_IDENTIFIER = com.apple.Weather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 3;

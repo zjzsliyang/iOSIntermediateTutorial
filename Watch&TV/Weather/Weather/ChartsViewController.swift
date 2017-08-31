@@ -63,29 +63,29 @@ class ChartsViewController: UIViewController {
     
     MyWeatherManager.setWeatherQualiyRankingInfo() { (finalDataArray) in
       DispatchQueue.main.async() {
+        
+        let frame = CGRect(x: 0, y: 70, width: self.topTenChartView.bounds.size.width, height: self.topTenChartView.bounds.size.height - 70)
+        var chartSettings = ChartSettings()
+        
         let chartConfig = BarsChartConfig(
-          chartSettings: ExamplesDefaults.chartSettingsWithPanZoom,
-          valsAxisConfig: ChartAxisConfig(from: 0, to: Double(finalDataArray[9]["aqi"]!)!, by: 2),
-          xAxisLabelSettings: ExamplesDefaults.labelSettings,
-          yAxisLabelSettings: ExamplesDefaults.labelSettings.defaultVertical()
+          chartSettings: chartSettings,
+          valsAxisConfig: ChartAxisConfig(from: 0, to: Double(finalDataArray[9]["aqi"] as! String)!, by: 2)
         )
         
         var cityBars = [(String, Double)]()
         for i in 0...9 {
-          let temp = (finalDataArray[i]["name"], Double(finalDataArray[i]["aqi"]!)!)
+          var temp = (finalDataArray[i]["name"], Double(finalDataArray[i]["aqi"] as! String)!)
           cityBars.append(temp as! (String, Double))
         }
-        
         let chart = BarsChart(
-          frame: ExamplesDefaults.chartFrame(self.topTenChartView.bounds),
+          frame:frame,
           chartConfig: chartConfig,
           xTitle: "城市",
           yTitle: "空气质量",
           bars: cityBars,
           color: UIColor.red,
-          barWidth: Env.iPad ? 40 : 20
+          barWidth: 40
         )
-        
         self.topTenChartView.addSubview(chart.view)
         self.chart = chart
       }
@@ -101,35 +101,37 @@ class ChartsViewController: UIViewController {
           (self.qualityChart?.view)!.removeFromSuperview()
         }
         
-        let labelSettings = ChartLabelSettings(font: ExamplesDefaults.labelFont)
+        let labelSettings = ChartLabelSettings(font: UIFont(name: "Helvetica", size: 16)!)
         
         var chartPoints = [ChartPoint]()
         
         for i in 0...4 {
-          let date = (finalDataArray[i]["date"]!)
+          let date = (finalDataArray[i]["date"] as! String)
           let index = date.index(date.startIndex, offsetBy: 5)
-          let tempChartPoint = ChartPoint(x: ChartAxisValueString(String(describing: date[index...]), order: i, labelSettings: labelSettings), y: ChartAxisValueDouble(Double(finalDataArray[i]["aqi"]!)!))
+          
+          let tempChartPoint = ChartPoint(x: ChartAxisValueString(date.substring(from: index
+          ), order: i, labelSettings: labelSettings), y: ChartAxisValueDouble(Double(finalDataArray[i]["aqi"]!)!))
           chartPoints.append(tempChartPoint)
         }
         
         
         let xValues = chartPoints.map { $0.x }
-        print(xValues[1])
         let yValues = ChartAxisValuesStaticGenerator.generateYAxisValuesWithChartPoints(chartPoints, minSegmentCount: 8, maxSegmentCount: 20, multiple: 2, axisValueGenerator: { ChartAxisValueDouble($0, labelSettings: labelSettings) }, addPaddingSegmentIfEdge: false)
         
         let xModel = ChartAxisModel(axisValues: xValues, axisTitleLabel: ChartAxisLabel(text: "日期", settings: labelSettings))
         let yModel = ChartAxisModel(axisValues: yValues, axisTitleLabel: ChartAxisLabel(text: "空气质量", settings: labelSettings.defaultVertical()))
         
-        let chartFrame = ExamplesDefaults.chartFrame(self.temperatureChartView.bounds)
-        var chartSettings = ExamplesDefaults.chartSettingsWithPanZoom
+        let chartFrame = CGRect(x: 0, y: 70, width: self.topTenChartView.bounds.size.width, height: self.topTenChartView.bounds.size.height - 70)
+        var chartSettings = ChartSettings()
+        chartSettings.top = 10
         chartSettings.trailing = 20
         let coordsSpace = ChartCoordsSpaceLeftBottomSingleAxis(chartSettings: chartSettings, chartFrame: chartFrame, xModel: xModel, yModel: yModel)
-        let (xAxisLayer, yAxisLayer, _) = (coordsSpace.xAxisLayer, coordsSpace.yAxisLayer, coordsSpace.chartInnerFrame)
+        let (xAxisLayer, yAxisLayer, innerFrame) = (coordsSpace.xAxisLayer, coordsSpace.yAxisLayer, coordsSpace.chartInnerFrame)
         
         let lineModel = ChartLineModel(chartPoints: chartPoints, lineColor: UIColor.red, lineWidth: 1, animDuration: 1, animDelay: 0)
         let chartPointsLineLayer = ChartPointsLineLayer(xAxis: xAxisLayer.axis, yAxis: yAxisLayer.axis, lineModels: [lineModel])
         
-        let settings = ChartGuideLinesDottedLayerSettings(linesColor: UIColor.black, linesWidth: ExamplesDefaults.guidelinesWidth)
+        let settings = ChartGuideLinesDottedLayerSettings(linesColor: UIColor.black, linesWidth: 0.2)
         let guidelinesLayer = ChartGuideLinesDottedLayer(xAxisLayer: xAxisLayer, yAxisLayer: yAxisLayer, settings: settings)
         
         self.qualityChart = Chart(
@@ -156,46 +158,36 @@ class ChartsViewController: UIViewController {
           (self.temperatureChart?.view)!.removeFromSuperview()
         }
         
-        print(Double(finalDataArray[0]["high"]!)!)
-        
-        let labelSettings = ChartLabelSettings(font: ExamplesDefaults.labelFont)
-        
-        //                let cp1 = ChartPoint(x: ChartAxisValueString(finalDataArray[0]["date"]!, order: 1, labelSettings: labelSettings), y: ChartAxisValueDouble(Double(finalDataArray[0]["high"]!)!))
-        //                let cp2 = ChartPoint(x: ChartAxisValueString(finalDataArray[1]["date"]!, order: 2, labelSettings: labelSettings), y: ChartAxisValueDouble(32))
-        //                let cp3 = ChartPoint(x: ChartAxisValueString("d3", order: 3, labelSettings: labelSettings), y: ChartAxisValueDouble(28))
-        //                let cp4 = ChartPoint(x: ChartAxisValueString("d4", order: 4, labelSettings: labelSettings), y: ChartAxisValueDouble(34))
-        //                let cp5 = ChartPoint(x: ChartAxisValueString("d5", order: 5, labelSettings: labelSettings), y: ChartAxisValueDouble(25))
-        //                let cp6 = ChartPoint(x: ChartAxisValueString("d7", order: 6, labelSettings: labelSettings), y: ChartAxisValueDouble(30))
-        //                let cp7 = ChartPoint(x: ChartAxisValueString("d8", order: 7, labelSettings: labelSettings), y: ChartAxisValueDouble(35))
+        let labelSettings = ChartLabelSettings(font: UIFont(name: "Helvetica", size: 16)!)
         
         var chartPoints = [ChartPoint]()
         
         for i in 0...6 {
-          let date = (finalDataArray[i]["date"]!)
+          let date = (finalDataArray[i]["date"] as! String)
           let index = date.index(date.startIndex, offsetBy: 5)
-          let tempChartPoint = ChartPoint(x: ChartAxisValueString(String(describing: date[index...]), order: i, labelSettings: labelSettings), y: ChartAxisValueDouble(Double(finalDataArray[i]["high"]!)!))
+          let tempChartPoint = ChartPoint(x: ChartAxisValueString(date.substring(from: index), order: i, labelSettings: labelSettings), y: ChartAxisValueDouble(Double(finalDataArray[i]["high"]!)!))
           chartPoints.append(tempChartPoint)
         }
         
-        
-        
         let xValues = chartPoints.map { $0.x }
-        print(xValues[1])
+
         let yValues = ChartAxisValuesStaticGenerator.generateYAxisValuesWithChartPoints(chartPoints, minSegmentCount: 8, maxSegmentCount: 20, multiple: 2, axisValueGenerator: { ChartAxisValueDouble($0, labelSettings: labelSettings) }, addPaddingSegmentIfEdge: false)
         
         let xModel = ChartAxisModel(axisValues: xValues, axisTitleLabel: ChartAxisLabel(text: "日期", settings: labelSettings))
         let yModel = ChartAxisModel(axisValues: yValues, axisTitleLabel: ChartAxisLabel(text: "温度", settings: labelSettings.defaultVertical()))
         
-        let chartFrame = ExamplesDefaults.chartFrame(self.temperatureChartView.bounds)
-        var chartSettings = ExamplesDefaults.chartSettingsWithPanZoom
+        let chartFrame = CGRect(x: 0, y: 70, width: self.temperatureChartView.bounds.size.width, height: self.temperatureChartView.bounds.size.height - 70)
+
+        var chartSettings = ChartSettings()
+        chartSettings.top = 10
         chartSettings.trailing = 20
         let coordsSpace = ChartCoordsSpaceLeftBottomSingleAxis(chartSettings: chartSettings, chartFrame: chartFrame, xModel: xModel, yModel: yModel)
-        let (xAxisLayer, yAxisLayer, _) = (coordsSpace.xAxisLayer, coordsSpace.yAxisLayer, coordsSpace.chartInnerFrame)
+        let (xAxisLayer, yAxisLayer, innerFrame) = (coordsSpace.xAxisLayer, coordsSpace.yAxisLayer, coordsSpace.chartInnerFrame)
         
         let lineModel = ChartLineModel(chartPoints: chartPoints, lineColor: UIColor.red, lineWidth: 1, animDuration: 1, animDelay: 0)
         let chartPointsLineLayer = ChartPointsLineLayer(xAxis: xAxisLayer.axis, yAxis: yAxisLayer.axis, lineModels: [lineModel])
         
-        let settings = ChartGuideLinesDottedLayerSettings(linesColor: UIColor.black, linesWidth: ExamplesDefaults.guidelinesWidth)
+        let settings = ChartGuideLinesDottedLayerSettings(linesColor: UIColor.black, linesWidth: 0.2)
         let guidelinesLayer = ChartGuideLinesDottedLayer(xAxisLayer: xAxisLayer, yAxisLayer: yAxisLayer, settings: settings)
         
         self.temperatureChart = Chart(
@@ -208,7 +200,6 @@ class ChartsViewController: UIViewController {
             chartPointsLineLayer
           ]
         )
-        
         self.temperatureChartView.addSubview((self.temperatureChart?.view)!)
       }
     }

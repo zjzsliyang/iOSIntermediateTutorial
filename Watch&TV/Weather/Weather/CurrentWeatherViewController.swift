@@ -8,47 +8,49 @@
 
 import UIKit
 import CoreLocation
-//添加属性到属性检查器
-@IBDesignable extension UIView {
-  @IBInspectable var borderColor: UIColor? {
-    set {
-      layer.borderColor = newValue!.cgColor
-    }
-    get {
-      if let color = layer.borderColor {
-        return UIColor(cgColor: color)
-      }
-        else {
-          return nil
-      }
-    }
-    
-    
-  }
-  @IBInspectable var borderWidth: CGFloat {
-    set {
-      layer.borderWidth = newValue
-    }
-    get {
-      return layer.borderWidth
-    }
-  }
-  @IBInspectable var cornerRadius: CGFloat {
-    set {
-      layer.cornerRadius = newValue
-      clipsToBounds = newValue > 0
-    }
-    get {
-      return layer.cornerRadius
-    }
-  }
-}
+////添加属性到属性检查器
+//@IBDesignable extension UIView {
+//  @IBInspectable var borderColor: UIColor? {
+//    set {
+//      layer.borderColor = newValue!.cgColor
+
+//    }
+//    get {
+//      if let color = layer.borderColor {
+//        return UIColor(cgColor: color)
+//      }
+//        else {
+//          return nil
+//      }
+//    }
+//
+//
+//  }
+//  @IBInspectable var borderWidth: CGFloat {
+//    set {
+//      layer.borderWidth = newValue
+//    }
+//    get {
+//      return layer.borderWidth
+//    }
+//  }
+//  @IBInspectable var cornerRadius: CGFloat {
+//    set {
+//      layer.cornerRadius = newValue
+//      clipsToBounds = newValue > 0
+//    }
+//    get {
+//      return layer.cornerRadius
+//    }
+//  }
+//}
+
+
+
 
 class CurrentWeatherViewController: UIViewController {
   
   @IBOutlet weak var ui_textField: UITextField!
-  @IBOutlet weak var myview: UIView!
-  
   @IBOutlet weak var ui_temperature: UILabel!
   @IBOutlet weak var ui_code: UIImageView!
   @IBOutlet weak var ui_text: UILabel!
@@ -59,11 +61,13 @@ class CurrentWeatherViewController: UIViewController {
   @IBOutlet weak var ui_quality: UILabel!
   @IBOutlet weak var ui_pm25: UILabel!
   @IBOutlet weak var ui_suggestion: UITextView!
-  
+  @IBOutlet weak var ui_detailAddress: UILabel!
+    
   
   @IBOutlet weak var mylabel: UILabel!
   override func viewDidLoad() {
     super.viewDidLoad()
+    
     
     MyWeatherManager.initWeatherBasicInfo(updateUI: { (finalData) in
       self.updateUI(finalData: finalData)
@@ -91,6 +95,8 @@ class CurrentWeatherViewController: UIViewController {
     let pm25 = finalData["pm25"]
     let suggestion = finalData["details"]
     
+    let detailAddress = finalData["detailAddress"]
+    
     
     DispatchQueue.main.async() {
       self.ui_temperature.text = temperature! + "℃"
@@ -103,6 +109,7 @@ class CurrentWeatherViewController: UIViewController {
       self.ui_quality.text = quality
       self.ui_pm25.text = pm25
       self.ui_suggestion.text = suggestion
+      self.ui_detailAddress.text = detailAddress
     }
   }
   
@@ -115,10 +122,10 @@ class CurrentWeatherViewController: UIViewController {
   @IBAction func searchButtonPress(_ sender: Any) {
     
     
-    let searchText = ui_textField.text!
-    if (searchText != "" && searchText != MyLocationManager.currentLocation) {
+    let searchText = ui_textField.text as! String
+    if (searchText != "" && searchText != MyLocationManager.locationShared.currentLocation) {
       
-      MyLocationManager.setCurrentLocation(current: searchText)
+      MyLocationManager.locationShared.setCurrentLocation(current: searchText)
       let currentNotification = Notification.Name.init(rawValue: "Current View Update")
       NotificationCenter.default.post(name: currentNotification, object: nil)
       

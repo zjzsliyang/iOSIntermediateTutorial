@@ -18,11 +18,7 @@ class ForecastViewController: UIViewController {
     MyWeatherManager.setWeatherForecastInfo(updateUI: { (finalDataArray) in
       self.upDateUI(finalDataArray: finalDataArray)
     })
-    
-    //        let locationGeted = Notification.Name.init(rawValue: "Location Update")
-    //        NotificationCenter.default.addObserver(forName: locationGeted, object: nil, queue: nil){(notification) in
-    //                print("hehe")
-    //        }
+
     
     let forecastNotification = Notification.Name.init(rawValue: "ForeCast View Update")
     NotificationCenter.default.addObserver(forName: forecastNotification, object: nil, queue: nil) { (notification) in

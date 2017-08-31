@@ -9,90 +9,68 @@ import UIKit
 import Foundation
 import CoreLocation
 
+//自封装LocationManager,以便在多个页面共享地理位置
 class MyLocationManager: CLLocationManager, CLLocationManagerDelegate {
 
-
   static let locationShared = MyLocationManager()
-  //static var currentProvince = "上海"
-  //static var currentCity = "嘉定"
-  static var currentLocation = "shanghaijiading"
-  var flag: Bool = false
+
+  var currentLocation = "上海嘉定" //系统默认定位
 
   var myCoordinate = CLLocationCoordinate2D()
 
-  var test = CLLocation()
-
-  var myLocations = [CLLocation]()
-
-  static func setCurrentLocation(current: String) {
-    currentLocation = current
-  }
-  static func initLocation() -> Void {
-    //MyLocationManager.locationShared.requestAlwaysAuthorization()
-    MyLocationManager.locationShared.desiredAccuracy = kCLLocationAccuracyBest
-    MyLocationManager.locationShared.requestWhenInUseAuthorization()
-    MyLocationManager.locationShared.delegate = MyLocationManager.locationShared
-    MyLocationManager.locationShared.requestLocation()
-  }
-  func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-    print("Failed to find user's location: \(error.localizedDescription)")
+  //设置定位
+ func setCurrentLocation(current: String) {
+    self.currentLocation = current
   }
 
+  //初始化定位信息
+  func initLocation() -> Void {
+    //设置位置精度
+    self.desiredAccuracy = kCLLocationAccuracyBest
+    //获取定位服务
+    self.requestWhenInUseAuthorization()
+    //设置委托对象
+    self.delegate = self
+    //获取一次坐标
+    self.requestLocation()
+  }
 
   func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+
+    //获取最新地理坐标
     let currentLocation = locations[0]
     myCoordinate.latitude = currentLocation.coordinate.latitude
     myCoordinate.longitude = currentLocation.coordinate.longitude
 
-    //        let coordinateNotification = Notification.Name.init("Get Coordinate")
-    //        NotificationCenter.default.post(name: coordinateNotification, object: nil)
-
-    let geoCoder = CLGeocoder()
+    
     let location = CLLocation(latitude: myCoordinate.latitude, longitude: myCoordinate.longitude)
 
-    UserDefaults.standard.set(["en"], forKey: "AppleLanguages")
+    let geoCoder = CLGeocoder()
+    UserDefaults.standard.set(["en"], forKey: "AppleLanguages")//将语言强制为英语，方便获取省市拼音
+    //地理反编码
     geoCoder.reverseGeocodeLocation(location, completionHandler: { placemarks, error in
       guard let addressDict = placemarks?[0].addressDictionary else {
         return
       }
-      //print(UserDefaults.standard.object(forKey: "AppleLanguages") as! [String])
 
-      // Print each key-value pair in a new row
-      addressDict.forEach { print($0) }
-
-      // Print fully formatted address
-      if (addressDict["FormattedAddressLines"] as? [String]) != nil {
-        //print(formattedAddress.joined(separator: ", "))
-      }
-
-      // Access each element manually
+      //获取省市拼音，以便http请求使用
       if let province = addressDict["State"] as? String {
-        //print(province)
-        //MyLocationManager.currentProvince = province
         if let city = addressDict["Name"] as? String {
-          //MyLocationManager.currentCity = city
-          MyLocationManager.currentLocation = "\(province)\(city)"
+          //记录省市
+          self.currentLocation = "\(province)\(city)"
           let locationGeted = Notification.Name.init(rawValue: "Location Update")
           NotificationCenter.default.post(name: locationGeted, object: nil)
-          //print(MyLocationManager.myLocation)
         }
       } else {
-        print("error")
+        print("地理反编码错误")
       }
-      //            if let city = addressDict["City"] as? String {
-      //                print("city:\(city)")
-      //            }
-      //            if let zip = addressDict["ZIP"] as? String {
-      //                print("zip:\(zip)")
-      //            }
-      //            if let country = addressDict["Country"] as? String {
-      //                print(country)
-      //            }
-      //print(UserDefaults.standard.object(forKey: "AppleLanguages") as! [String])
-      UserDefaults.standard.removeObject(forKey: "AppleLanguages")
-      //print(UserDefaults.standard.object(forKey: "AppleLanguages") as! [String])
+      UserDefaults.standard.removeObject(forKey: "AppleLanguages")//将语言转换回系统语言
     })
+  }
 
+  //定位错误时调用
+  func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+    print("Failed to find user's location: \(error.localizedDescription)")
   }
 
   override init() {

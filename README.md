@@ -26,15 +26,15 @@ iOS University官方中级课程(中文)
 
 ## Schema
 
-- Instance Message
+- Instance Message(Cheng LIN)
   - 3D Touch, Notifications, In-App Purchases, Third-Party Lib, Simplest Server Side
-- Handware
+- Handware()
   - Bluetooth, Location, HealthKit, SiriKit
-- Video&Audio
+- Video&Audio()
   - Metal, Core Audio, Open GL
-- Game(LACK: slides)
+- Game()
   - GameCenter, SceneKit, SpriteKit
-- ML&AR(LACK: slides)
+- ML&AR()
   - Core ML, ARKit
-- Watch&TV(finished)
+- Watch&TV(Zhongjin LUO)
 

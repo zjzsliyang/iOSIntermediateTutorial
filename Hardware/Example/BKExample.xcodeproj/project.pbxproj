@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2DB03F011D427F0900E735CE /* BluetoothKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C669828C1CEB9FA100E23B57 /* BluetoothKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2FF9D3422050E8A400631965 /* BluetoothKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FF9D33D2050E87100631965 /* BluetoothKit.framework */; };
+		2FF9D3432050E8A400631965 /* BluetoothKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2FF9D33D2050E87100631965 /* BluetoothKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		918E89671DBA036200174266 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 918E89641DBA007300174266 /* SnapKit.framework */; };
 		918E89681DBA036200174266 /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 918E89641DBA007300174266 /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		918E896B1DBA036800174266 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 918E895B1DBA006700174266 /* CryptoSwift.framework */; };
@@ -43,13 +44,38 @@
 		C66982B21CEBA0C300E23B57 /* AvailabilityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66888941B970123003C8DBB /* AvailabilityViewController.swift */; };
 		C66982B31CEBA0C300E23B57 /* NSData+NumberOfBytes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C668888D1B970123003C8DBB /* NSData+NumberOfBytes.swift */; };
 		C66982B41CEBA0C300E23B57 /* UIImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = C668888E1B970123003C8DBB /* UIImage+Color.swift */; };
-		C66982B51CEBA0D600E23B57 /* BluetoothKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C669828C1CEB9FA100E23B57 /* BluetoothKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
-		C67653F51B8E2D3C00D43F8E /* BluetoothKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C67653F41B8E2D2B00D43F8E /* BluetoothKit.framework */; };
-		C67653F61B8E2D3C00D43F8E /* BluetoothKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C67653F41B8E2D2B00D43F8E /* BluetoothKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C67A22601B8C7D5B00CB74CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C67A22571B8C7D5B00CB74CE /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		2FF9D33C2050E87100631965 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2FF9D3362050E87100631965 /* BluetoothKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C687E3981B8B496400B702D8;
+			remoteInfo = "BluetoothKit iOS";
+		};
+		2FF9D33E2050E87100631965 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2FF9D3362050E87100631965 /* BluetoothKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C6ED86C11BA955A600C9B70B;
+			remoteInfo = "BluetoothKit OSX";
+		};
+		2FF9D3402050E87100631965 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2FF9D3362050E87100631965 /* BluetoothKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C64CDDF31BE4C46A00F72549;
+			remoteInfo = "BluetoothKit tvOS";
+		};
+		2FF9D3442050E8A400631965 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2FF9D3362050E87100631965 /* BluetoothKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = C687E3971B8B496400B702D8;
+			remoteInfo = "BluetoothKit iOS";
+		};
 		918E895A1DBA006700174266 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 918E89551DBA006700174266 /* CryptoSwift.xcodeproj */;
@@ -92,41 +118,6 @@
 			remoteGlobalIDString = 754BE45419693E190098E6F3;
 			remoteInfo = CryptoSwift;
 		};
-		C669828B1CEB9FA100E23B57 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C67653EF1B8E2D2B00D43F8E /* BluetoothKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = C64CDDF31BE4C46A00F72549;
-			remoteInfo = "BluetoothKit tvOS";
-		};
-		C66982A81CEBA0A900E23B57 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C67653EF1B8E2D2B00D43F8E /* BluetoothKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = C64CDDF21BE4C46A00F72549;
-			remoteInfo = "BluetoothKit tvOS";
-		};
-		C67653F31B8E2D2B00D43F8E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C67653EF1B8E2D2B00D43F8E /* BluetoothKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = C687E3981B8B496400B702D8;
-			remoteInfo = BluetoothKit;
-		};
-		C67653F71B8E2D3C00D43F8E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C67653EF1B8E2D2B00D43F8E /* BluetoothKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = C687E3971B8B496400B702D8;
-			remoteInfo = BluetoothKit;
-		};
-		C6E04DCE1BBDA5B50050C09A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C67653EF1B8E2D2B00D43F8E /* BluetoothKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = C6ED86C11BA955A600C9B70B;
-			remoteInfo = "BluetoothKit OSX";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -136,7 +127,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				2DB03F011D427F0900E735CE /* BluetoothKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -148,7 +138,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				918E896C1DBA036800174266 /* CryptoSwift.framework in Embed Frameworks */,
-				C67653F61B8E2D3C00D43F8E /* BluetoothKit.framework in Embed Frameworks */,
+				2FF9D3432050E8A400631965 /* BluetoothKit.framework in Embed Frameworks */,
 				918E89681DBA036200174266 /* SnapKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -157,6 +147,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2FF9D3362050E87100631965 /* BluetoothKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BluetoothKit.xcodeproj; path = Vendor/BluetoothKit/BluetoothKit.xcodeproj; sourceTree = "<group>"; };
 		918E89551DBA006700174266 /* CryptoSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CryptoSwift.xcodeproj; path = Vendor/CryptoSwift/CryptoSwift.xcodeproj; sourceTree = "<group>"; };
 		918E895E1DBA007300174266 /* SnapKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SnapKit.xcodeproj; path = Vendor/SnapKit/SnapKit.xcodeproj; sourceTree = "<group>"; };
 		951FDF2D1F439CFE00291FC1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -182,7 +173,6 @@
 		C66888991B970123003C8DBB /* RoleSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoleSelectionViewController.swift; sourceTree = "<group>"; };
 		C668889B1B970123003C8DBB /* AvailabilityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailabilityView.swift; sourceTree = "<group>"; };
 		C669827B1CEB9FA100E23B57 /* BKExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BKExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		C67653EF1B8E2D2B00D43F8E /* BluetoothKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BluetoothKit.xcodeproj; path = ../BluetoothKit.xcodeproj; sourceTree = "<group>"; };
 		C67A22401B8C7D1B00CB74CE /* BKExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BKExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C67A22581B8C7D5B00CB74CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C67A225B1B8C7D5B00CB74CE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -193,7 +183,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C66982B51CEBA0D600E23B57 /* BluetoothKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,9 +191,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				918E896B1DBA036800174266 /* CryptoSwift.framework in Frameworks */,
-				C67653F51B8E2D3C00D43F8E /* BluetoothKit.framework in Frameworks */,
 				952FA2521F43A8900045701E /* MapKit.framework in Frameworks */,
 				918E89671DBA036200174266 /* SnapKit.framework in Frameworks */,
+				2FF9D3422050E8A400631965 /* BluetoothKit.framework in Frameworks */,
 				95F9A28C1F43C034008E39B0 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,6 +201,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2FF9D3372050E87100631965 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2FF9D33D2050E87100631965 /* BluetoothKit.framework */,
+				2FF9D33F2050E87100631965 /* BluetoothKit.framework */,
+				2FF9D3412050E87100631965 /* BluetoothKit.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		918E89561DBA006700174266 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -295,16 +294,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		C67653F01B8E2D2B00D43F8E /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				C67653F41B8E2D2B00D43F8E /* BluetoothKit.framework */,
-				C6E04DCF1BBDA5B50050C09A /* BluetoothKit.framework */,
-				C669828C1CEB9FA100E23B57 /* BluetoothKit.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		C67A22371B8C7D1B00CB74CE = {
 			isa = PBXGroup;
 			children = (
@@ -338,11 +327,11 @@
 		C67A226F1B8C7DE300CB74CE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2FF9D3362050E87100631965 /* BluetoothKit.xcodeproj */,
 				95F9A28B1F43C034008E39B0 /* HealthKit.framework */,
 				952FA2511F43A8900045701E /* MapKit.framework */,
 				918E895E1DBA007300174266 /* SnapKit.xcodeproj */,
 				918E89551DBA006700174266 /* CryptoSwift.xcodeproj */,
-				C67653EF1B8E2D2B00D43F8E /* BluetoothKit.xcodeproj */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -362,7 +351,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				C66982A91CEBA0A900E23B57 /* PBXTargetDependency */,
 			);
 			name = "BKExample (tvOS)";
 			productName = "BKExample (tvOS)";
@@ -383,9 +371,9 @@
 			buildRules = (
 			);
 			dependencies = (
-				C67653F81B8E2D3C00D43F8E /* PBXTargetDependency */,
 				918E896A1DBA036200174266 /* PBXTargetDependency */,
 				918E896E1DBA036800174266 /* PBXTargetDependency */,
+				2FF9D3452050E8A400631965 /* PBXTargetDependency */,
 			);
 			name = "BKExample (iOS)";
 			productName = BluetoothKitExample;
@@ -438,8 +426,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = C67653F01B8E2D2B00D43F8E /* Products */;
-					ProjectRef = C67653EF1B8E2D2B00D43F8E /* BluetoothKit.xcodeproj */;
+					ProductGroup = 2FF9D3372050E87100631965 /* Products */;
+					ProjectRef = 2FF9D3362050E87100631965 /* BluetoothKit.xcodeproj */;
 				},
 				{
 					ProductGroup = 918E89561DBA006700174266 /* Products */;
@@ -459,6 +447,27 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		2FF9D33D2050E87100631965 /* BluetoothKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = BluetoothKit.framework;
+			remoteRef = 2FF9D33C2050E87100631965 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2FF9D33F2050E87100631965 /* BluetoothKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = BluetoothKit.framework;
+			remoteRef = 2FF9D33E2050E87100631965 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2FF9D3412050E87100631965 /* BluetoothKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = BluetoothKit.framework;
+			remoteRef = 2FF9D3402050E87100631965 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		918E895B1DBA006700174266 /* CryptoSwift.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -485,27 +494,6 @@
 			fileType = wrapper.cfbundle;
 			path = "SnapKit Tests.xctest";
 			remoteRef = 918E89651DBA007300174266 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		C669828C1CEB9FA100E23B57 /* BluetoothKit.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = BluetoothKit.framework;
-			remoteRef = C669828B1CEB9FA100E23B57 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		C67653F41B8E2D2B00D43F8E /* BluetoothKit.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = BluetoothKit.framework;
-			remoteRef = C67653F31B8E2D2B00D43F8E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		C6E04DCF1BBDA5B50050C09A /* BluetoothKit.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = BluetoothKit.framework;
-			remoteRef = C6E04DCE1BBDA5B50050C09A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -606,6 +594,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		2FF9D3452050E8A400631965 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "BluetoothKit iOS";
+			targetProxy = 2FF9D3442050E8A400631965 /* PBXContainerItemProxy */;
+		};
 		918E896A1DBA036200174266 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SnapKit;
@@ -615,16 +608,6 @@
 			isa = PBXTargetDependency;
 			name = CryptoSwift;
 			targetProxy = 918E896D1DBA036800174266 /* PBXContainerItemProxy */;
-		};
-		C66982A91CEBA0A900E23B57 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "BluetoothKit tvOS";
-			targetProxy = C66982A81CEBA0A900E23B57 /* PBXContainerItemProxy */;
-		};
-		C67653F81B8E2D3C00D43F8E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = BluetoothKit;
-			targetProxy = C67653F71B8E2D3C00D43F8E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

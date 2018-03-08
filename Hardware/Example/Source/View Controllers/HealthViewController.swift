@@ -105,7 +105,7 @@ class HealthViewController: UIViewController {
             if let mindfulType = HKObjectType.categoryType(forIdentifier: .mindfulSession) {
 
                 // we create our new object we want to push in Health app
-                let mindfullSample = HKCategorySample(type:mindfulType, value: 0, start: self.alarmTime, end: self.endTime)
+                let mindfullSample = HKCategorySample(type: mindfulType, value: 0, start: self.alarmTime, end: self.endTime)
 
                 // at the end, we save it
                 healthStore.save(mindfullSample, withCompletion: { (success, error) -> Void in

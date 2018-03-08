@@ -58,7 +58,7 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
 
             messages.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
-            nsdefaults.set(messages, forKey:"textMess")
+            nsdefaults.set(messages, forKey: "textMess")
 
         } else if editingStyle == .insert {
 
@@ -67,7 +67,7 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     func message(completion:(_ messages: [String]) -> Void) {
         var array: [String] = [String]()
-        if let items = nsdefaults.object(forKey:"textMess") as? [String] {
+        if let items = nsdefaults.object(forKey: "textMess") as? [String] {
             for item in items {
             array.append(item)
             }

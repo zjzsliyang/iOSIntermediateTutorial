@@ -22,7 +22,7 @@ class SiriViewController: UIViewController, SFSpeechRecognizerDelegate {
 
     @IBOutlet weak var recordButton: UIButton!
 
-    var speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier:"zh-tw"))
+    var speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "zh-tw"))
     var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     var recognitionTask: SFSpeechRecognitionTask?
     let audioEngine = AVAudioEngine()
@@ -42,13 +42,13 @@ class SiriViewController: UIViewController, SFSpeechRecognizerDelegate {
         var array: [String] = [String]()
         array = messages
         array.append(text!)
-        nsdefaults.set(array, forKey:"textMess")
+        nsdefaults.set(array, forKey: "textMess")
         print("Saved")
         dismiss(animated: true, completion: nil)
     } else {
         var array: [String] = [String]()
         array.append(text!)
-        nsdefaults.set(array, forKey:"textMess")
+        nsdefaults.set(array, forKey: "textMess")
 
         }
     }

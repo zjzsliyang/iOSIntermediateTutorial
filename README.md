@@ -28,13 +28,13 @@ iOS University官方中级课程(中文)
 
 - Instance Message(Cheng LIN)
   - 3D Touch, Notifications, In-App Purchases, Third-Party Lib, Simplest Server Side
-- Handware()
+- Handware(Xiao BI)
   - Bluetooth, Location, HealthKit, SiriKit
-- Video&Audio()
+- Video&Audio(Lin LIN)
   - Metal, Core Audio, Open GL
-- Game()
+- Game(Yang LI)
   - GameCenter, SceneKit, SpriteKit
-- ML&AR()
+- ML&AR(Yang LI)
   - Core ML, ARKit
 - Watch&TV(Zhongjin LUO)
 

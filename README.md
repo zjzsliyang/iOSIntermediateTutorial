@@ -32,9 +32,9 @@ iOS University官方中级课程(中文)
   - Bluetooth, Location, HealthKit, SiriKit
 - Video&Audio
   - Metal, Core Audio, Open GL
-- Game
+- Game(LACK: slides)
   - GameCenter, SceneKit, SpriteKit
-- ML&AR
+- ML&AR(LACK: slides)
   - Core ML, ARKit
-- Watch&TV
+- Watch&TV(finished)
 

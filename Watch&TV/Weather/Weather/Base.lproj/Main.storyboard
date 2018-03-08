@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="13178.6" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="13771" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="appleTV" orientation="landscape">
         <adaptation id="light"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13156.2"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -850,12 +850,16 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cFX-fb-EcT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2916" y="1840"/>
+            <point key="canvasLocation" x="2190" y="1947"/>
         </scene>
         <!--First View Controller-->
         <scene sceneID="aiv-r1-70W">
             <objects>
                 <viewController id="o0N-xH-nb0" userLabel="First View Controller" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LOW-7f-56a"/>
+                        <viewControllerLayoutGuide type="bottom" id="YFx-0e-gy7"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="wX6-ca-Nld">
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="919"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -868,6 +872,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="ixZ-SS-Sze"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OoW-eR-pfc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -878,6 +883,10 @@
         <scene sceneID="W6L-NF-9U4">
             <objects>
                 <viewController id="Awb-XD-ue7" userLabel="Second View Controller" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Dqo-2H-azo"/>
+                        <viewControllerLayoutGuide type="bottom" id="0PM-hp-qjg"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="FrT-6l-73h">
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="919"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -890,6 +899,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="Pex-Bc-ATW"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QRZ-aV-itN" userLabel="First Responder" sceneMemberID="firstResponder"/>

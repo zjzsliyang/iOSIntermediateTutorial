@@ -53,7 +53,7 @@ class MetalViewController: UIViewController {
         objectToDraw = cube(device: device)
         
         // 1
-        let defaultLibrary = device.newDefaultLibrary()
+        let defaultLibrary = device.makeDefaultLibrary()
         let fragmentProgram = defaultLibrary?.makeFunction(name: "basic_fragment")
         let vertexProgram = defaultLibrary?.makeFunction(name: "basic_vertex")
         

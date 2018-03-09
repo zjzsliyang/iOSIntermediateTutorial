@@ -49,21 +49,27 @@ class MyLocationManager: CLLocationManager, CLLocationManagerDelegate {
     UserDefaults.standard.set(["en"], forKey: "AppleLanguages")//将语言强制为英语，方便获取省市拼音
     //地理反编码
     geoCoder.reverseGeocodeLocation(location, completionHandler: { placemarks, error in
-      guard let addressDict = placemarks?[0].addressDictionary else {
+      guard let placemark = placemarks?.first else {
         return
       }
 
       //获取省市拼音，以便http请求使用
-      if let province = addressDict["State"] as? String {
-        if let city = addressDict["Name"] as? String {
-          //记录省市
-          print(city)
-          self.currentLocation = "\(province)\(city)"
-            self.currentLocation = "上海嘉定"
-          let locationGeted = Notification.Name.init(rawValue: "Location Update")
-          NotificationCenter.default.post(name: locationGeted, object: nil)
+        if let province = placemark.administrativeArea {
+            if let city = placemark.locality {
+              //记录省市
+              self.currentLocation = "\(province)\(city)"
+              let locationGeted = Notification.Name.init(rawValue: "Location Update")
+              NotificationCenter.default.post(name: locationGeted, object: nil)
         }
-      } else {
+        }else if let province = placemark.locality {
+            if let city = placemark.subLocality {
+                //记录省市
+                self.currentLocation = "\(province)\(city)"
+                let locationGeted = Notification.Name.init(rawValue: "Location Update")
+                NotificationCenter.default.post(name: locationGeted, object: nil)
+            }
+        }else {
+        self.currentLocation = "shanghaijiading"
         print("地理反编码错误")
       }
       UserDefaults.standard.removeObject(forKey: "AppleLanguages")//将语言转换回系统语言

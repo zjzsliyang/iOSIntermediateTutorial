@@ -14,7 +14,7 @@ class MyLocationManager: CLLocationManager, CLLocationManagerDelegate {
 
   static let locationShared = MyLocationManager()
 
-  var currentLocation = "上海嘉定" //系统默认定位
+  var currentLocation = "上海杨浦" //系统默认定位
 
   var myCoordinate = CLLocationCoordinate2D()
 
@@ -57,7 +57,9 @@ class MyLocationManager: CLLocationManager, CLLocationManagerDelegate {
       if let province = addressDict["State"] as? String {
         if let city = addressDict["Name"] as? String {
           //记录省市
+          print(city)
           self.currentLocation = "\(province)\(city)"
+            self.currentLocation = "上海嘉定"
           let locationGeted = Notification.Name.init(rawValue: "Location Update")
           NotificationCenter.default.post(name: locationGeted, object: nil)
         }

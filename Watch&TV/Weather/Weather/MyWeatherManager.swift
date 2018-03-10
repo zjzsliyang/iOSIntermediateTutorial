@@ -12,7 +12,7 @@ class MyWeatherManager {
     
     
     //心知天气密钥
-    static let myKey = "kv3qdlu4ku268ypr"
+    static let myKey = "8slib9tcgjjbxecv"
     
     static func initWeatherBasicInfo(updateUI: @escaping (_ finalData: [String: String]) -> Void) {
         MyLocationManager.locationShared.initLocation()

@@ -737,64 +737,11 @@
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="YZ9-Dm-0Uo" kind="relationship" relationship="viewControllers" id="7RR-2C-Eu5"/>
-                        <segue destination="FzR-Ku-sRK" kind="relationship" relationship="viewControllers" id="VZJ-3Y-D2H"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="1eJ-CM-U4k">
-            <objects>
-                <viewController id="FzR-Ku-sRK" userLabel="View Controller" customClass="FirstViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="YsB-DD-mDb"/>
-                        <viewControllerLayoutGuide type="bottom" id="wo3-Uo-LlC"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ChT-hg-9VR">
-                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="4tF-EL-YWy">
-                                <rect key="frame" x="783" y="952" width="354" height="69"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.10000000000000001" colorSpace="calibratedWhite"/>
-                                <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
-                                </segments>
-                                <connections>
-                                    <action selector="indexChanged:" destination="FzR-Ku-sRK" eventType="valueChanged" id="GfR-m7-Lct"/>
-                                </connections>
-                            </segmentedControl>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NRt-4c-gy9">
-                                <rect key="frame" x="0.0" y="0.0" width="1920" height="919"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <connections>
-                                    <segue destination="o0N-xH-nb0" kind="embed" id="xBR-aJ-jgH"/>
-                                </connections>
-                            </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T3R-6j-yoR">
-                                <rect key="frame" x="0.0" y="0.0" width="1920" height="919"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <connections>
-                                    <segue destination="Awb-XD-ue7" kind="embed" id="l3J-oV-De5"/>
-                                </connections>
-                            </containerView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="JmJ-c6-dQJ"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="PzD-a6-jmH"/>
-                    <connections>
-                        <outlet property="fisrtContainerView" destination="NRt-4c-gy9" id="UaF-LF-axq"/>
-                        <outlet property="secondContainerView" destination="T3R-6j-yoR" id="1sB-wI-LLm"/>
-                        <outlet property="segmentedControl" destination="4tF-EL-YWy" id="JKQ-Z7-iMy"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ibs-f2-gRG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-342" y="1947"/>
         </scene>
         <!--Chart-->
         <scene sceneID="8ob-fc-Ahc">
@@ -851,60 +798,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cFX-fb-EcT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2190" y="1947"/>
-        </scene>
-        <!--First View Controller-->
-        <scene sceneID="aiv-r1-70W">
-            <objects>
-                <viewController id="o0N-xH-nb0" userLabel="First View Controller" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="LOW-7f-56a"/>
-                        <viewControllerLayoutGuide type="bottom" id="YFx-0e-gy7"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="wX6-ca-Nld">
-                        <rect key="frame" x="0.0" y="0.0" width="1920" height="919"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="The First View" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6u7-he-sHb">
-                                <rect key="frame" x="793" y="436" width="334" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="ixZ-SS-Sze"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OoW-eR-pfc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1503" y="3678.5"/>
-        </scene>
-        <!--Second View Controller-->
-        <scene sceneID="W6L-NF-9U4">
-            <objects>
-                <viewController id="Awb-XD-ue7" userLabel="Second View Controller" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Dqo-2H-azo"/>
-                        <viewControllerLayoutGuide type="bottom" id="0PM-hp-qjg"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="FrT-6l-73h">
-                        <rect key="frame" x="0.0" y="0.0" width="1920" height="919"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="The Second View" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kfG-Gn-Den">
-                                <rect key="frame" x="733" y="436" width="455" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="Pex-Bc-ATW"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QRZ-aV-itN" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="542" y="3679"/>
         </scene>
     </scenes>
     <resources>

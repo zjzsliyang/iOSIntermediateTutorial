@@ -13,7 +13,7 @@ import SceneKit
 class SCNViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
   var arSCNView = ARSCNView()
   var arSession = ARSession()
-  var arSessionConfiguration = ARSessionConfiguration()
+  var arSessionConfiguration = ARWorldTrackingConfiguration()
   
   var sunNode: SCNNode!
   var sunHaloNode: SCNNode!
@@ -45,7 +45,7 @@ class SCNViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate 
     arSCNView.delegate = self
     arSCNView.session = self.arSession
     arSCNView.automaticallyUpdatesLighting = true
-    let configuration = ARWorldTrackingSessionConfiguration()
+    let configuration = ARWorldTrackingConfiguration()
     configuration.planeDetection = .horizontal
     arSessionConfiguration = configuration
     arSessionConfiguration.isLightEstimationEnabled = true

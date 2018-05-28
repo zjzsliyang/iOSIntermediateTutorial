@@ -28,7 +28,7 @@ iOS University官方中级课程(中文)
 
 - Instance Message(Cheng LIN)
   - 3D Touch, Notifications, In-App Purchases, Third-Party Lib, Simplest Server Side
-- Handware(Xiao BI)
+- Hardware(Xiao BI)
   - Bluetooth, Location, HealthKit, SiriKit
 - Video&Audio(Lin LIN)
   - Metal, Core Audio, Open GL
